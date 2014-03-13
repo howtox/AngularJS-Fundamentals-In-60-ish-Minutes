@@ -21,14 +21,16 @@
   <script type="text/javascript">
     var demoApp = angular.module('demoApp', []);
 
-    demoApp.controller('SimpleController', function($scope){
+    var controllers = {};
+    controllers.SimpleController = function($scope){
       $scope.customers = [
-        { name: 'Dave Jones', city: 'Phoenix'},
-        { name: 'Jamie Riley', city: 'Atlanta'},
-        { name: 'Heedy Wahlin', city: 'Chandler'},
-        { name: 'Thomas Winter', city: 'Seattle'}
+        { name: 'John Smith', city: 'Phoenix'},
+        { name: 'John Doe', city: 'New York'},
+        { name: 'Jane Doe', city: 'San Francisco'}
       ];
-    });
+    };
+
+    demoApp.controller(controllers);
 
   </script>
 
