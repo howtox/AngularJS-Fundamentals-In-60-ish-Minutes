@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>Using AngularJS Directives and Data Binding</title>
+</head>
+<body>
+
+  <div class="container" data-ng-controller="SimpleController">
+    <h3>Adding a Simple Controller</h3>
+    <ul>
+      <li data-ng-repeat="cust in customers">{{ cust.name }} - {{ cust.city}}</li>
+    </ul>
+  </div>
+
+  <script type="text/javascript">
+    var SimpleController = function ($scope) {
+      $scope.customers = [
+        { name: 'Dave Jones', city: 'Phoenix'},
+        { name: 'Jamie Riley', city: 'Atlanta'},
+        { name: 'Heedy Wahlin', city: 'Chandler'},
+        { name: 'Thomas Winter', city: 'Seattle'}
+      ];
+    };
+
+  </script>
+
+  <script type="text/javascript" src="scripts/angular.min.js"></script>
+</body>
+</html>
