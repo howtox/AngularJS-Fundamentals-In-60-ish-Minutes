@@ -33,8 +33,14 @@
     });
 
     var controllers = {};
-    controllers.SimpleController = function($scope){
+    controllers.SimpleController = function($scope, SimpleFactory){
       $scope.customers = [];
+
+      var init = function(){
+        $scope.customers = SimpleFactory.getCustomers();
+      };
+
+      init();
 
       $scope.addCustomer = function(){
         $scope.customers.push({
@@ -52,6 +58,15 @@
         { name: 'John Doe', city: 'New York'},
         { name: 'Jane Doe', city: 'San Francisco'}
       ];
+
+      var factory = {};
+      factory.getCustomers = function(){
+        return customers;
+      };
+      factory.postCustomers = function(){
+
+      };
+      return factory;
     });
 
   </script>
